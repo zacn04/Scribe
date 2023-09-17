@@ -14,10 +14,10 @@ model = "gpt-3.5-turbo-0613"
 
 def explanation(prompt : str, answer : str) -> str:
   #This is going to explain the answer given by Wolfram Alpha, based off of the prompt.
-  query = (f'I am going to give you a prompt that has been passed to Wolfram Alpha.\n'
-           f'Your task is to explain the answer given by Wolfram Alpha, in followable steps, in natural language.\n'
-            f'Do not invent math. Do not restate the answer without explanation of how to get there.\n'
-  f'Why is {prompt} equivalent to {answer}? Be detailed, answer in less than 300 characters.\n')           
+  query = (f"""I am going to give you a prompt that has been passed to Wolfram Alpha.
+          Your task is to explain the answer given by Wolfram Alpha, in followable steps, in natural language.
+          Do not invent math. Do not restate the answer without explanation of how to get there.
+          Why is {prompt} equivalent to {answer}? Be concise, answer in less than 300 characters.""")           
   #print()
   messages = [{'role': 'user', 'content' : query}]
   response = openai.ChatCompletion.create(model=model, messages=messages)
