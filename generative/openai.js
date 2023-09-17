@@ -9,7 +9,7 @@ async function generateText() {
 
     try {
         const chatCompletion = await openai.chat.completions.create({
-            messages: [{ role: "user", content: "I am going to give you text as if I was writing notes in a 6.006 MIT class. Respond with the three highest probability continuations, and rank them. Binary search is O(log(n)) because"}],
+            messages: [{ role: "user", content: "I am going to give you a prompt that resembles a math equation in Latex. This expression has been parsed to integrate with Wolfram Alpha. Respond with the the highest probability answer. Do not invent math that is impossible."}],
             model: "gpt-3.5-turbo",
         });
         console.log(chatCompletion);
