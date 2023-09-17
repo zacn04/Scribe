@@ -21,6 +21,10 @@ def latex_to_text(input_string):
     replacement = r'\\t'
 
     # Use the re.sub() function to replace all occurrences of the character in the string
+    
+    input_string = re.sub(r"\\\\", ".", input_string)
+    input_string = re.sub(r"\\end{array} \\", "", input_string)
+    input_string = re.sub(r"\\begin{array}{c}", "", input_string)
     input_string = re.sub("left", "", input_string)
     input_string = re.sub("right", "", input_string)
     input_string = re.sub("cdot", "*", input_string)
@@ -31,6 +35,10 @@ def latex_to_text(input_string):
     input_string = re.sub('}', ')', input_string)
     input_string = re.sub(r'\\to', '->', input_string)
     input_string = input_string[1:]
+    if input_string[0] == '(' and input_string[-1] == ')':
+        input_string = input_string[1:-1]
+
+
     # input_string = '(' + input_string + ')'
 
     while "frac" in  input_string:
@@ -43,7 +51,9 @@ def latex_to_text(input_string):
     return input_string
 
 if __name__ == "__main__":
-    input_string = "\lim_{a\to\frac{2}{5}}\frac{3a-2\sin{\pi}a}{3a^{3}-5}"
+    # input_string = "\lim_{a\to\frac{2}{5}}\frac{3a-2\sin{\pi}a}{3a^{3}-5}"
+    # input_string = "\\( \\begin{array}{c}x=5 \\\\ x^{2}+7 x+6 \\\\ y^{\\sin x}+\\cosh ^{2} x\\end{array} \\)"
+    input_string =  "\(3 + 3 =\)"
     text = latex_to_text(input_string)
-    
+
     print(text)

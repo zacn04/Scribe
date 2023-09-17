@@ -1,6 +1,7 @@
 import os
 import openai
 
+<<<<<<< HEAD
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -47,3 +48,18 @@ if __name__ == "__main__":
 
   Therefore, the value of the integral \( \int_{\pi / 4}^{\pi / 2} \sin x \, dx \) is approximately equal to \(1/\sqrt{2} \approx 0.70711\).
   '''
+=======
+# in progress
+
+key = "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"
+openai.organization = "org-WbwlG5hvut8bXxTOfEm4tfV6"
+openai.api_key = os.getenv(key)
+# openai.Model.list()
+model = "gpt-3.5-turbo-0613"
+query = "I'm so"
+
+print()
+response = openai.Completion.create(model=model, prompt=query)
+print(response)
+print(type(response))
+>>>>>>> 9125d73 (tys first commit)
