@@ -4,7 +4,7 @@ from latex_to_response import result_handling
 from handwriting import main
 import json
 
-def hand_to_hand(x : str) -> None:
+def hand_to_hand(x : str):
   latex = image_to_latex.image_to_latex(x) # x is the path of the image in a string
   text_query = latex_parsing.latex_to_text(latex)
   json_answer = result_handling.request_query_response(text_query)
