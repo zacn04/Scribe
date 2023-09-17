@@ -137,13 +137,14 @@ def place_image(input_img, x0, y0, x1, y1):
     output_img = image_processing.hand_to_hand(input_img)
     
     print("newest x1", x1)
-    tarHeight = y1 - y0
+    tarHeight = (y1 - y0)*3/4
     
     aspectRatio = output_img.width/output_img.height
     tarWidth = tarHeight * aspectRatio
     print("new sizes", int(tarWidth), int(tarHeight))
     output_img = output_img.resize((int(tarWidth), int(tarHeight)))
-    # (y0, y1, x0, x1), output_img = resizing.insert_image(output_img, (y0, y1, x0, x1), (0, height, 0, width))
+    # (y0, y1, x0, x1), output_img = resizing.insert_image(output_img, (y0, y1-1, x0, x1-1), (0, height, 0, width))
+
     output_img = ImageTk.PhotoImage(output_img)
     completion = customtkinter.CTkButton(master =root, image=output_img, state = "disabled", fg_color ='white', text = "")
     centerLine = (y0+y1)/2
@@ -154,6 +155,7 @@ def place_image(input_img, x0, y0, x1, y1):
     print("orgX",orgX)
     print("tarSize", tarWidth, tarHeight)
     completion.place(x= orgX, y=orgY)
+
 
     
 
@@ -218,8 +220,8 @@ eraserIcon = Image.open("eraser.png")
 eraserIcon = eraserIcon.resize((40, 40))
 eraserIcon = ImageTk.PhotoImage(eraserIcon)
 # pencilIcon = tk.PhotoImage(file="pencil.png")
-eraser_button = customtkinter.CTkButton(master =root, image = selectIcon, width = 50, height = 50, fg_color = 'white', text = "", border_width =0,  hover_color = '#c9c9c9', corner_radius = 0, command = set_mode_erase)
-eraser_button.place(x= width/2 - 50 -30, y=20)
+eraser_button = customtkinter.CTkButton(master =root, image = eraserIcon, width = 50, height = 50, fg_color = 'white', text = "", border_width =0,  hover_color = '#c9c9c9', corner_radius = 0, command = set_mode_erase)
+eraser_button.place(x= width/2 - 13, y=20)
 
 # Bind mouse events to canvas
 canvas.bind("<Button-1>", mouse_clicked)
