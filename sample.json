@@ -1,0 +1,144 @@
+{
+    "success": true,
+    "error": false,
+    "numpods": 6,
+    "datatypes": "Math",
+    "timedout": "",
+    "timedoutpods": "",
+    "timing": 0.526,
+    "parsetiming": 0.07200000000000001,
+    "parsetimedout": false,
+    "recalculate": "",
+    "id": "MSP4732244e5285ag68bai2000029a7b88bed4h7801",
+    "host": "https://www6b3.wolframalpha.com",
+    "server": "3",
+    "related": "https://www6b3.wolframalpha.com/api/v1/relatedQueries.jsp?id=MSPa4733244e5285ag68bai200000d0if18he1i3i9h03629183885576317489",
+    "version": "2.6",
+    "inputstring": "( 3+3 )",
+    "pods": [
+        {
+            "title": "Input",
+            "scanner": "Identity",
+            "id": "Input",
+            "position": 100,
+            "error": false,
+            "numsubpods": 1,
+            "subpods": [
+                {
+                    "title": "",
+                    "plaintext": "3 + 3"
+                }
+            ],
+            "expressiontypes": {
+                "name": "Default"
+            }
+        },
+        {
+            "title": "Result",
+            "scanner": "Simplification",
+            "id": "Result",
+            "position": 200,
+            "error": false,
+            "numsubpods": 1,
+            "primary": true,
+            "subpods": [
+                {
+                    "title": "",
+                    "plaintext": "6"
+                }
+            ],
+            "expressiontypes": {
+                "name": "Default"
+            },
+            "states": [
+                {
+                    "name": "Step-by-step solution",
+                    "input": "Result__Step-by-step solution",
+                    "stepbystep": true,
+                    "buttonstyle": "StepByStepSolution"
+                }
+            ]
+        },
+        {
+            "title": "Number line",
+            "scanner": "NumberLine",
+            "id": "NumberLine",
+            "position": 300,
+            "error": false,
+            "numsubpods": 1,
+            "subpods": [
+                {
+                    "title": "",
+                    "plaintext": ""
+                }
+            ],
+            "expressiontypes": {
+                "name": "Default"
+            }
+        },
+        {
+            "title": "Number name",
+            "scanner": "Integer",
+            "id": "NumberName",
+            "position": 400,
+            "error": false,
+            "numsubpods": 1,
+            "subpods": [
+                {
+                    "title": "",
+                    "plaintext": "six"
+                }
+            ],
+            "expressiontypes": {
+                "name": "Default"
+            }
+        },
+        {
+            "title": "Manipulatives illustration",
+            "scanner": "Arithmetic",
+            "id": "Illustration",
+            "position": 500,
+            "error": false,
+            "numsubpods": 1,
+            "subpods": [
+                {
+                    "title": "",
+                    "plaintext": " | + | | = | \n3 | | 3 | | 6"
+                }
+            ],
+            "expressiontypes": {
+                "name": "Default"
+            }
+        },
+        {
+            "title": "Typical human computation times",
+            "scanner": "Arithmetic",
+            "id": "TypicalHumanComputationTimes",
+            "position": 600,
+            "error": false,
+            "numsubpods": 1,
+            "subpods": [
+                {
+                    "title": "",
+                    "microsources": {
+                        "microsource": "HumanComputationQuery"
+                    },
+                    "plaintext": "age 6: 3.2 seconds | age 8: 1.8 seconds | age 10: 1.2 seconds | \nage 18: 0.83 seconds\n(ignoring concentration, repetition, variations in education, etc.)"
+                }
+            ],
+            "expressiontypes": {
+                "name": "Grid"
+            },
+            "states": [
+                {
+                    "name": "More details",
+                    "input": "TypicalHumanComputationTimes__More details"
+                }
+            ]
+        }
+    ],
+    "sources": {
+        "url": "https://www6b3.wolframalpha.com/sources/HumanComputationQuerySourceInformationNotes.html",
+        "text": "Human computation query"
+    }
+}
