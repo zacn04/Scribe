@@ -54,8 +54,10 @@ def mouse_dragged(event):
     global mode
     if mode == "draw":
         draw(event)
-    else:
+    elif mode == "select":
         select(event)
+    else:
+        erase(event)
 
 def start_draw(event):
     global drawing, prev_x, prev_y
@@ -131,6 +133,9 @@ def end_select(event):
     help_window.main("15 + 7", "22")
     
     
+def erase(event):
+    x, y = event.x, event.y
+    canvas.create_rectangle(x - 5, y - 5, x + 5, y + 5, fill="white", outline="white")
     
 def place_image(input_img, x0, y0, x1, y1):
     global completion
