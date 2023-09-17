@@ -30,11 +30,7 @@ def save_image(query, filename):
     url = find_proper_image(result)
     if url is None:
         print("No valid url found")
-<<<<<<< HEAD
         return 0
-=======
-        return
->>>>>>> 9125d73 (tys first commit)
     
     response = requests.get(url)
 
@@ -43,15 +39,10 @@ def save_image(query, filename):
         with open(filename, "wb") as f:
             f.write(response.content)
         print("File downloaded successfully.")
-<<<<<<< HEAD
         return 1
     else:
         print(f"Failed to download the file. Status code: {response.status_code}")
         return 0
-=======
-    else:
-        print(f"Failed to download the file. Status code: {response.status_code}")
->>>>>>> 9125d73 (tys first commit)
 
 # with open("sample.json", "w") as outfile:
 #     outfile.write(json.dumps(result["queryresult"]["pods"], indent=4))
