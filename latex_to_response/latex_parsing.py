@@ -34,6 +34,7 @@ def latex_to_text(input_string):
     input_string = re.sub('{', '(', input_string)
     input_string = re.sub('}', ')', input_string)
     input_string = re.sub(r'\\to', '->', input_string)
+    input_string = re.sub(r'\rightarrow', '->', input_string)
     input_string = input_string[1:]
     if input_string[0] == '(' and input_string[-1] == ')':
         input_string = input_string[1:-1]
@@ -54,6 +55,7 @@ if __name__ == "__main__":
     # input_string = "\lim_{a\to\frac{2}{5}}\frac{3a-2\sin{\pi}a}{3a^{3}-5}"
     # input_string = "\\( \\begin{array}{c}x=5 \\\\ x^{2}+7 x+6 \\\\ y^{\\sin x}+\\cosh ^{2} x\\end{array} \\)"
     input_string =  "\(3 + 3 =\)"
+    input_string = " \( \lim _{n \rightarrow \infty} \frac{1}{n}= \)"
     text = latex_to_text(input_string)
 
     print(text)
