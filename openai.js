@@ -2,15 +2,6 @@ const { OpenAI } = require("openai");
 
 require('dotenv').config();
 
-/*const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
-
-const chatCompletion = await openai.chat.completions.create({
-    messages: [{ role: "user", content: "Say this is a test" }],
-    model: "gpt-3.5-turbo",
-});*/
-
 async function generateText() {
     const openai = new OpenAI({
         apiKey: process.env.OPENAI_API_KEY,
@@ -18,7 +9,7 @@ async function generateText() {
 
     try {
         const chatCompletion = await openai.chat.completions.create({
-            messages: [{ role: "user", content: "Say this is a test" }],
+            messages: [{ role: "user", content: "I am going to give you text as if I was writing notes in a 6.006 MIT class. Respond with the three highest probability continuations, and rank them. Binary search is O(log(n)) because"}],
             model: "gpt-3.5-turbo",
         });
         console.log(chatCompletion);
