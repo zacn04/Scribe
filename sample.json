@@ -1,144 +1,36 @@
 {
-    "success": true,
+    "success": false,
     "error": false,
-    "numpods": 6,
-    "datatypes": "Math",
+    "numpods": 0,
+    "datatypes": "",
     "timedout": "",
     "timedoutpods": "",
-    "timing": 0.522,
-    "parsetiming": 0.091,
+    "timing": 2.141,
+    "parsetiming": 0.625,
     "parsetimedout": false,
     "recalculate": "",
-    "id": "MSP592207idabe257a9e040000505g9heedigdh9ic",
+    "id": "",
+    "parseidserver": "7",
     "host": "https://www6b3.wolframalpha.com",
-    "server": "2",
-    "related": "https://www6b3.wolframalpha.com/api/v1/relatedQueries.jsp?id=MSPa593207idabe257a9e04000045245887ag9599c9724077331436509559",
+    "server": "7",
+    "related": "",
     "version": "2.6",
-    "inputstring": "( 3+3 )",
-    "pods": [
+    "inputstring": "lim _(n arrow infty) (1)/(n)=",
+    "didyoumeans": [
         {
-            "title": "Input",
-            "scanner": "Identity",
-            "id": "Input",
-            "position": 100,
-            "error": false,
-            "numsubpods": 1,
-            "subpods": [
-                {
-                    "title": "",
-                    "plaintext": "3 + 3"
-                }
-            ],
-            "expressiontypes": {
-                "name": "Default"
-            }
+            "score": "0.391379",
+            "level": "medium",
+            "val": "(1)/(n)"
         },
         {
-            "title": "Result",
-            "scanner": "Simplification",
-            "id": "Result",
-            "position": 200,
-            "error": false,
-            "numsubpods": 1,
-            "primary": true,
-            "subpods": [
-                {
-                    "title": "",
-                    "plaintext": "6"
-                }
-            ],
-            "expressiontypes": {
-                "name": "Default"
-            },
-            "states": [
-                {
-                    "name": "Step-by-step solution",
-                    "input": "Result__Step-by-step solution",
-                    "stepbystep": true,
-                    "buttonstyle": "StepByStepSolution"
-                }
-            ]
+            "score": "0.2",
+            "level": "low",
+            "val": "lim _"
         },
         {
-            "title": "Number line",
-            "scanner": "NumberLine",
-            "id": "NumberLine",
-            "position": 300,
-            "error": false,
-            "numsubpods": 1,
-            "subpods": [
-                {
-                    "title": "",
-                    "plaintext": ""
-                }
-            ],
-            "expressiontypes": {
-                "name": "Default"
-            }
-        },
-        {
-            "title": "Number name",
-            "scanner": "Integer",
-            "id": "NumberName",
-            "position": 400,
-            "error": false,
-            "numsubpods": 1,
-            "subpods": [
-                {
-                    "title": "",
-                    "plaintext": "six"
-                }
-            ],
-            "expressiontypes": {
-                "name": "Default"
-            }
-        },
-        {
-            "title": "Manipulatives illustration",
-            "scanner": "Arithmetic",
-            "id": "Illustration",
-            "position": 500,
-            "error": false,
-            "numsubpods": 1,
-            "subpods": [
-                {
-                    "title": "",
-                    "plaintext": " | + | | = | \n3 | | 3 | | 6"
-                }
-            ],
-            "expressiontypes": {
-                "name": "Default"
-            }
-        },
-        {
-            "title": "Typical human computation times",
-            "scanner": "Arithmetic",
-            "id": "TypicalHumanComputationTimes",
-            "position": 600,
-            "error": false,
-            "numsubpods": 1,
-            "subpods": [
-                {
-                    "title": "",
-                    "microsources": {
-                        "microsource": "HumanComputationQuery"
-                    },
-                    "plaintext": "age 6: 3.2 seconds | age 8: 1.8 seconds | age 10: 1.2 seconds | \nage 18: 0.83 seconds\n(ignoring concentration, repetition, variations in education, etc.)"
-                }
-            ],
-            "expressiontypes": {
-                "name": "Grid"
-            },
-            "states": [
-                {
-                    "name": "More details",
-                    "input": "TypicalHumanComputationTimes__More details"
-                }
-            ]
+            "score": "0.172414",
+            "level": "low",
+            "val": "arrow"
         }
-    ],
-    "sources": {
-        "url": "https://www6b3.wolframalpha.com/sources/HumanComputationQuerySourceInformationNotes.html",
-        "text": "Human computation query"
-    }
+    ]
 }
