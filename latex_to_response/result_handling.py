@@ -36,6 +36,8 @@ def parse_and_find_result(result):
             return pod["subpods"][0]["plaintext"]
         if pod["title"] == "Sum":
             return pod["subpods"][0]["plaintext"]
+        if pod["title"] == "Exact result":
+            return pod["subpods"][0]["plaintext"]
         
         
     assert False, "Result not found"
