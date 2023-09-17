@@ -15,5 +15,6 @@ def hand_to_hand(x : str):
   hand = main.process_text_to_image(text_answer) #Function will generate an image that is passed back
   return hand
 
-answer = hand_to_hand("image_to_latex/test2.png")
-answer.save("test_answer.png")
+if __name__ == "__main__":
+  answer = hand_to_hand("image_to_latex/test2.png")
+  answer.save("test_answer.png")
