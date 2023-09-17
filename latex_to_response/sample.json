@@ -1,0 +1,114 @@
+[
+    {
+        "title": "Sum",
+        "scanner": "Sum",
+        "id": "Result",
+        "position": 100,
+        "error": false,
+        "numsubpods": 1,
+        "primary": true,
+        "subpods": [
+            {
+                "title": "",
+                "plaintext": "sum_(x=0)^i x = 1/2 i (i + 1)"
+            }
+        ],
+        "expressiontypes": {
+            "name": "Default"
+        }
+    },
+    {
+        "title": "Partial sums",
+        "scanner": "Sum",
+        "id": "PartialSums",
+        "position": 200,
+        "error": false,
+        "numsubpods": 1,
+        "subpods": [
+            {
+                "title": "",
+                "plaintext": ""
+            }
+        ],
+        "expressiontypes": {
+            "name": "Default"
+        },
+        "states": [
+            {
+                "name": "More terms",
+                "input": "PartialSums__More terms"
+            },
+            {
+                "name": "Show points",
+                "input": "PartialSums__Show points"
+            }
+        ]
+    },
+    {
+        "title": "Values",
+        "scanner": "Sequence",
+        "id": "Values",
+        "position": 300,
+        "error": false,
+        "numsubpods": 1,
+        "primary": true,
+        "subpods": [
+            {
+                "title": "",
+                "plaintext": "i | 1 | 2 | 3 | 4 | 5\n1/2 i (i + 1) | 1 | 3 | 6 | 10 | 15"
+            }
+        ],
+        "expressiontypes": {
+            "name": "Grid"
+        },
+        "states": [
+            {
+                "name": "More",
+                "input": "Values__More"
+            }
+        ]
+    },
+    {
+        "title": "Expanded form",
+        "scanner": "Simplification",
+        "id": "ExpandedForm",
+        "position": 400,
+        "error": false,
+        "numsubpods": 1,
+        "subpods": [
+            {
+                "title": "",
+                "plaintext": "i^2/2 + i/2"
+            }
+        ],
+        "expressiontypes": {
+            "name": "Default"
+        }
+    },
+    {
+        "title": "Alternate forms",
+        "scanner": "Simplification",
+        "id": "AlternateForm",
+        "position": 500,
+        "error": false,
+        "numsubpods": 2,
+        "subpods": [
+            {
+                "title": "",
+                "plaintext": "1/8 (2 i + 1)^2 - 1/8"
+            },
+            {
+                "title": "",
+                "plaintext": "(i/2 + 1/2) i"
+            }
+        ],
+        "expressiontypes": [
+            {
+                "name": "Default"
+            },
+            {
+                "name": "Default"
+            }
+        ]
+    }
+]
