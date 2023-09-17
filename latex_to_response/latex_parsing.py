@@ -21,6 +21,10 @@ def latex_to_text(input_string):
     replacement = r'\\t'
 
     # Use the re.sub() function to replace all occurrences of the character in the string
+    input_string = re.sub("left", "", input_string)
+    input_string = re.sub("right", "", input_string)
+    input_string = re.sub("c_dot", "*", input_string)
+    input_string = re.sub("neg", "(-)*", input_string)
     input_string = re.sub(r'\t', r'\\t', input_string)
     input_string = re.sub(r'\f', r'\\f', input_string)
     input_string = re.sub('{', '(', input_string)
