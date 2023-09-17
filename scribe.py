@@ -128,6 +128,7 @@ def end_select(event):
     print("updated", x1)
     place_image(screenshot, x0, y0, x1, y1)
     
+    
 def place_image(input_img, x0, y0, x1, y1):
     global completion
     output_img = image_processing.hand_to_hand(input_img)
