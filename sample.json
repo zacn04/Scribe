@@ -1,0 +1,31 @@
+{
+    "success": false,
+    "error": false,
+    "numpods": 0,
+    "datatypes": "",
+    "timedout": "",
+    "timedoutpods": "",
+    "timing": 6.013,
+    "parsetiming": 2.188,
+    "parsetimedout": false,
+    "recalculate": "",
+    "id": "",
+    "parseidserver": "18",
+    "host": "https://www6b3.wolframalpha.com",
+    "server": "18",
+    "related": "",
+    "version": "2.6",
+    "inputstring": "( neg(3)+((7+17)^(2))/(left(x^(4)right) cdot G_(e)^(-2)) cdot int_(-2)^(5) e^(-x) d x )",
+    "didyoumeans": [
+        {
+            "score": "0.140845",
+            "level": "low",
+            "val": "c dot G_(e)^(-2)"
+        },
+        {
+            "score": "0.109195",
+            "level": "low",
+            "val": "left right"
+        }
+    ]
+}

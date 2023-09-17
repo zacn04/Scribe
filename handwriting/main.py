@@ -1,13 +1,21 @@
 # directions:
 # 1. add `from handwriting/main import generate_image`
 # 2. generate_image takes in text and returns a PIL image object
-from fastapi import FastAPI
 from PIL import Image
 from sys import argv
 import io
 import random
 
 def process_text_to_image(text):
+    """
+    Takes in a text string and returns a PIL object
+
+    Args:
+        text (str): a string (preferably numbers)
+
+    Returns:
+        PIL.image: PIL image library
+    """
     BG=Image.open("myfont/bg.png") #path of page(background)photo (I have used blank page)
     
     gap, ht = 0, 0
@@ -25,7 +33,7 @@ def process_text_to_image(text):
         except:
             pass
 
-    BG = BG.resize((width, height - 100))
+    BG = BG.resize((width, height))
     sheet_width=BG.width
 
     # for each letter in the uploaded txt file, read the unicode value and replace it with
@@ -34,11 +42,9 @@ def process_text_to_image(text):
         try:
             char_code = ord(char)
             cases = Image.open("myfont/{}.png".format(char_code))
-            BG.paste(cases, (gap + random.randrange(-20, 20), ht + random.randrange(-30, 30)))
+            BG.paste(cases, (gap, ht))
             size = cases.width
             height=cases.height
-            #print(size)
-            print("Running...........")
             gap+=size
 
             if sheet_width < gap or len(char)*115 >(sheet_width-gap):
@@ -51,13 +57,13 @@ def process_text_to_image(text):
 
 def generate_image(text: str):
     """
-    Returns handwriting as a PIL image based off text
+    Returns handwriting as a png
 
     Args:
         text (str): solution (ideally a number)
 
     Returns:
-        PIL.image file: A PIL image file
+        png file: A png image file
     """
     generated_image = process_text_to_image(text)
 
@@ -68,6 +74,6 @@ def generate_image(text: str):
     
     return generated_image
 
-image = generate_image("5+10=15")
-
-image.save("test.png")
+if __name__ == "__main__":
+    image = generate_image("5+10")
+    image.save("test.png")
