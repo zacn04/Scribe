@@ -19,9 +19,12 @@ def image_to_latex(img: str) -> str:
         data = {'options_json': json.dumps(options)}
         response = requests.post(url, headers=headers, files=files, data=data)
 
+    print(response)
+    # Process the response
     if response.status_code == 200:
         result = json.loads(response.text)
-        json.dump(result.get('text'))
+        with open("latex.json", "w+") as f:
+            json.dump(result.get('text'), f)
         return result.get('text')
         # Further processing
     else:
