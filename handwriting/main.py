@@ -1,4 +1,6 @@
-#Importing Library
+# directions:
+# 1. add `from handwriting/main import generate_image`
+# 2. generate_image takes in text and returns a PIL image object
 from fastapi import FastAPI
 from PIL import Image
 from sys import argv
@@ -48,6 +50,15 @@ def process_text_to_image(text):
     return BG
 
 def generate_image(text: str):
+    """
+    Returns handwriting as a PIL image based off text
+
+    Args:
+        text (str): solution (ideally a number)
+
+    Returns:
+        PIL.image file: A PIL image file
+    """
     generated_image = process_text_to_image(text)
 
     # Convert the generated image to bytes
