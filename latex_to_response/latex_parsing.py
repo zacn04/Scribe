@@ -44,4 +44,6 @@ def latex_to_text(input_string):
 
 if __name__ == "__main__":
     input_string = "\lim_{a\to\frac{2}{5}}\frac{3a-2\sin{\pi}a}{3a^{3}-5}"
-    print(latex_to_text(input_string))
+    text = latex_to_text(input_string)
+    
+    print(text)

@@ -54,7 +54,8 @@ def parse(result):
     return clean_answer
 
 if __name__ == "__main__":
-    query = "let i = 10. sum of x from x = 0 to x = i?"
+    # query = "let i = 10. sum of x from x = 0 to x = i?"
+    query = "3 + 3 ="
     result = parse(request_query_response(query))
     print(result)
     # with open("sample.json", "w") as outfile:
