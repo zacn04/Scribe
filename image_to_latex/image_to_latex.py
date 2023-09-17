@@ -21,6 +21,7 @@ def image_to_latex(img: str) -> str:
 
     if response.status_code == 200:
         result = json.loads(response.text)
+        json.dump(result.get('text'))
         return result.get('text')
         # Further processing
     else:
