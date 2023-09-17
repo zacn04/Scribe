@@ -19,7 +19,6 @@ def process_text_to_image(text):
     """
     BG=Image.open("myfont/bg.png") #path of page(background)photo (I have used blank page)
     
-    gap, ht = 0, 0
     
     width = 0
     height = 0
@@ -46,16 +45,11 @@ def process_text_to_image(text):
 
     # for each letter in the uploaded txt file, read the unicode value and replace it with
     # the corresponding handwritten file in the "myfont" folder.
-    gap, ht = 0, 0
-    
-    width = 0
-    height = 0
+    gap = 0
 
     for written_char in written_chars:
-        BG.paste(written_char, (gap, ht))
-        size = written_char.width
-        height=written_char.height
-        gap+=size
+        BG.paste(written_char, (gap, 0))
+        gap+=written_char.width
 
         # if sheet_width < gap or len(char)*115 >(sheet_width-gap):
         #     gap,ht=0,ht
