@@ -5,6 +5,7 @@ from PIL import Image
 from sys import argv
 import io
 import random
+import os
 
 def process_text_to_image(text):
     """
@@ -23,35 +24,42 @@ def process_text_to_image(text):
     width = 0
     height = 0
 
+    written_chars = []
+
     for char in text:
         try:
             char_code = ord(char)
-            cases = Image.open("myfont/{}.png".format(char_code))
+            cases_list = os.listdir("myfont/{}".format(char_code))
+            random_file = random.choice(cases_list)
+            cases = Image.open(f"myfont/{char_code}/{random_file}")
+            written_chars.append(cases)
             width += cases.width
             if cases.height > height:
                 height = cases.height
         except:
-            pass
+            cases_list = os.listdir("myfont/{}".format(char_code))
+            random_file = random.choice(cases_list)
+            print(f"missing folder: myfont/{char_code}")
 
     BG = BG.resize((width, height))
-    sheet_width=BG.width
+    # sheet_width=BG.width
 
     # for each letter in the uploaded txt file, read the unicode value and replace it with
     # the corresponding handwritten file in the "myfont" folder.
-    for char in text:
-        try:
-            char_code = ord(char)
-            cases = Image.open("myfont/{}.png".format(char_code))
-            BG.paste(cases, (gap, ht))
-            size = cases.width
-            height=cases.height
-            gap+=size
+    gap, ht = 0, 0
+    
+    width = 0
+    height = 0
 
-            if sheet_width < gap or len(char)*115 >(sheet_width-gap):
-                gap,ht=0,ht+140
-        except FileNotFoundError:
-            char_code = ord(char)
-            print("Missing file: myfont/{}.png".format(char_code))
+    for written_char in written_chars:
+        BG.paste(written_char, (gap, ht))
+        size = written_char.width
+        height=written_char.height
+        gap+=size
+
+        # if sheet_width < gap or len(char)*115 >(sheet_width-gap):
+        #     gap,ht=0,ht
+            
 
     return BG
 
