@@ -1,6 +1,8 @@
 import cv2
 from PIL import Image
 from PIL.Image import fromarray
+import numpy as np
+
 
 def find_four_edges_of_text(image, highlighted_coords, notepad_coords):
     """find the 4 edges of text within text box corners
@@ -64,18 +66,20 @@ def find_open_spot(notepad_coords, object_coords, image):
     height, width = image.shape[:2]
     if n_right - o_right >= width:
         return (o_top, o_bottom, o_left, width)
-    return (o_top-height, o_bottom-height, o_left, width)
+    return (o_top-height, o_bottom-height, o_left, o_left+width)
 
 def cv_to_pil(cv_image):
     numpy_array = cv2.cvtColor(cv_image, cv2.COLOR_BGR2RGB)
     pil_image = Image.fromarray(numpy_array)
     return pil_image
 
-def insert_image(image_filename, highlighted_coords, notepad_coords):
-    image = cv2.imread(image_filename) 
-    object_coords = find_four_edges_of_text(image, highlighted_coords, notepad_coords)
-    resized_image = resize_image(object_coords, image)
+def insert_image(pil_image, highlighted_coords, notepad_coords):
+    pil_image_array = np.array(pil_image)
+
+    cv2_image = cv2.cvtColor(pil_image_array, cv2.COLOR_RGB2BGR)
+    object_coords = find_four_edges_of_text(cv2_image, highlighted_coords, notepad_coords)
+    resized_image = resize_image(object_coords, cv2_image)
     open_coords = find_open_spot(notepad_coords, object_coords, resized_image)
-    pil_image = cv_to_pil(image)
+    pil_image = cv_to_pil(resized_image)
     return (open_coords, pil_image)
     
