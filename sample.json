@@ -1,32 +1,33 @@
 {
     "success": true,
     "error": false,
-    "numpods": 6,
-    "datatypes": "Math",
+    "numpods": 2,
+    "datatypes": "Sum",
     "timedout": "",
     "timedoutpods": "",
-    "timing": 0.511,
-    "parsetiming": 0.07100000000000001,
+    "timing": 0.487,
+    "parsetiming": 0.28600000000000003,
     "parsetimedout": false,
     "recalculate": "",
-    "id": "MSP10067244e5077074i714b00006ah5e5h11i05b642",
+    "id": "MSP18011i1i6b5egihh262f00003gbeig73edi0b6ie",
     "host": "https://www6b3.wolframalpha.com",
-    "server": "3",
-    "related": "https://www6b3.wolframalpha.com/api/v1/relatedQueries.jsp?id=MSPa10068244e5077074i714b0000307i646ah329f10i3629183885576317489",
+    "server": "12",
+    "related": "https://www6b3.wolframalpha.com/api/v1/relatedQueries.jsp?id=MSPa18021i1i6b5egihh262f000037dh1acfa45hdh48822558548030476863",
     "version": "2.6",
-    "inputstring": "3+3=",
+    "inputstring": "sum_(i=0)^(10) i^(2)=",
     "pods": [
         {
-            "title": "Input",
-            "scanner": "Identity",
-            "id": "Input",
+            "title": "Sum",
+            "scanner": "Sum",
+            "id": "Result",
             "position": 100,
             "error": false,
             "numsubpods": 1,
+            "primary": true,
             "subpods": [
                 {
                     "title": "",
-                    "plaintext": "3 + 3"
+                    "plaintext": "sum_(i=0)^10 i^2 = 385"
                 }
             ],
             "expressiontypes": {
@@ -34,36 +35,10 @@
             }
         },
         {
-            "title": "Result",
-            "scanner": "Simplification",
-            "id": "Result",
+            "title": "Partial sums",
+            "scanner": "Sum",
+            "id": "PartialSums",
             "position": 200,
-            "error": false,
-            "numsubpods": 1,
-            "primary": true,
-            "subpods": [
-                {
-                    "title": "",
-                    "plaintext": "6"
-                }
-            ],
-            "expressiontypes": {
-                "name": "Default"
-            },
-            "states": [
-                {
-                    "name": "Step-by-step solution",
-                    "input": "Result__Step-by-step solution",
-                    "stepbystep": true,
-                    "buttonstyle": "StepByStepSolution"
-                }
-            ]
-        },
-        {
-            "title": "Number line",
-            "scanner": "NumberLine",
-            "id": "NumberLine",
-            "position": 300,
             "error": false,
             "numsubpods": 1,
             "subpods": [
@@ -75,70 +50,6 @@
             "expressiontypes": {
                 "name": "Default"
             }
-        },
-        {
-            "title": "Number name",
-            "scanner": "Integer",
-            "id": "NumberName",
-            "position": 400,
-            "error": false,
-            "numsubpods": 1,
-            "subpods": [
-                {
-                    "title": "",
-                    "plaintext": "six"
-                }
-            ],
-            "expressiontypes": {
-                "name": "Default"
-            }
-        },
-        {
-            "title": "Manipulatives illustration",
-            "scanner": "Arithmetic",
-            "id": "Illustration",
-            "position": 500,
-            "error": false,
-            "numsubpods": 1,
-            "subpods": [
-                {
-                    "title": "",
-                    "plaintext": " | + | | = | \n3 | | 3 | | 6"
-                }
-            ],
-            "expressiontypes": {
-                "name": "Default"
-            }
-        },
-        {
-            "title": "Typical human computation times",
-            "scanner": "Arithmetic",
-            "id": "TypicalHumanComputationTimes",
-            "position": 600,
-            "error": false,
-            "numsubpods": 1,
-            "subpods": [
-                {
-                    "title": "",
-                    "microsources": {
-                        "microsource": "HumanComputationQuery"
-                    },
-                    "plaintext": "age 6: 3.2 seconds | age 8: 1.8 seconds | age 10: 1.2 seconds | \nage 18: 0.83 seconds\n(ignoring concentration, repetition, variations in education, etc.)"
-                }
-            ],
-            "expressiontypes": {
-                "name": "Grid"
-            },
-            "states": [
-                {
-                    "name": "More details",
-                    "input": "TypicalHumanComputationTimes__More details"
-                }
-            ]
         }
-    ],
-    "sources": {
-        "url": "https://www6b3.wolframalpha.com/sources/HumanComputationQuerySourceInformationNotes.html",
-        "text": "Human computation query"
-    }
+    ]
 }

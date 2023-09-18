@@ -129,7 +129,7 @@ def end_select(event):
     newSquare = True
     print("updated", x1)
     place_image(screenshot, x0, y0, x1, y1)
-
+    help_window.main("15 + 7", "22")
     
     
 def erase(event):
