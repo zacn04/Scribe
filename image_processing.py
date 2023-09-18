@@ -2,7 +2,7 @@ from image_to_latex import image_to_latex
 from latex_to_response import latex_parsing
 from latex_to_response import result_handling
 from handwriting import main
-import help_window
+# import help_window
 import json
 
 def hand_to_hand(x):
@@ -14,7 +14,7 @@ def hand_to_hand(x):
   text_answer = result_handling.parse(json_answer)
   print(text_answer)
   hand = main.process_text_to_image(text_answer) #Function will generate an image that is passed back
-  help_window.main(text_query, text_answer)
+  # help_window.main(text_query, text_answer)
   return hand
 
 # answer = hand_to_hand("image_to_latex/test2.png")

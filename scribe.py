@@ -129,7 +129,7 @@ def end_select(event):
     newSquare = True
     print("updated", x1)
     place_image(screenshot, x0, y0, x1, y1)
-    help_window.main("15 + 7", "22")
+    # help_window.main("15 + 7", "22")
     
     
 def erase(event):
@@ -222,8 +222,8 @@ eraserIcon = Image.open("eraser.png")
 eraserIcon = eraserIcon.resize((40, 40))
 eraserIcon = ImageTk.PhotoImage(eraserIcon)
 # pencilIcon = tk.PhotoImage(file="pencil.png")
-eraser_button = customtkinter.CTkButton(master =root, image = selectIcon, width = 50, height = 50, fg_color = 'white', text = "", border_width =0,  hover_color = '#c9c9c9', corner_radius = 0, command = set_mode_erase)
-eraser_button.place(x= width/2 - 50 -30, y=20)
+eraser_button = customtkinter.CTkButton(master =root, image = eraserIcon, width = 50, height = 50, fg_color = 'white', text = "", border_width =0,  hover_color = '#c9c9c9', corner_radius = 0, command = set_mode_erase)
+eraser_button.place(x= width/2 - 13, y=20)
 
 # Bind mouse events to canvas
 canvas.bind("<Button-1>", mouse_clicked)
